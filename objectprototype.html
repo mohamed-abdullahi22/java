@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>javascript prototype object</title>
+</head>
+<body>
+<script type="text/javascript">
+	function employee(firstName, lastName, salary, title){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.salary = salary;
+    this.title = title;
+	}
+	employee.prototype.fullDetails = function(){
+		return this.firstName + "  " + this.lastName + "  " + this.title;
+	}
+	var employee1 = new employee("Mohamed", "Yusuf", 4455, "Director");
+	var employee2 = new employee("Ali","Musa", 56367,"Cleaner");
+	var employee3 = new employee("Musa", "Aisha",32333,"Chef");
+
+    document.writeln(employee1.fullDetails()+"<br>");
+    document.writeln(employee2.fullDetails()+"<br>");
+    document.writeln(employee3.fullDetails()+"<br>");
+
+    function employer(firstname,lastname,){
+    this.firstname = firstname;
+    this.lastname = lastname;
+    }
+    employer.prototype.company = "SIR"
+    var employe = new employer("Kuku","Abdi");
+    var employeke = new employer("Kiki","Mohan");
+  
+   document.writeln(employe.firstname +" " + employe.lastname + " " + employe.company+"<br>");
+   document.writeln(employeke.firstname +" " + employeke.lastname + " " + employeke.company+"<br>");
+
+   function Name(firstname, lastname){
+   	this.firstname = firstname;
+   	this.lastname = lastname;
+   }
+
+   employer.prototype.company = "SIR"
+   var empoyer1 = new employer("Kuku", "Kaka");
+   var empoyer2 = new employer("Kiki", "Kunda");
+
+document.writeln("Name: " + empoyer1.firstname + " " + empoyer1.lastname + " " + "<br>company: " + empoyer1.company + "<br>");
+document.writeln("Name: " + empoyer2.firstname + " " + empoyer2.lastname + " " + "<br>company: " + empoyer2.company + "<br>");
+  
+  
+
+
+</script>
+</body>
+</html>

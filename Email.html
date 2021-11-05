@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Email Validation</title>
+	<script type="text/javascript">
+		function ValidateEmail(){
+			var MyEmail = document.myform.MyEmail.value;
+			var atpostion = MyEmail.indexOf("@");
+			var dotposition = MyEmail.lastIndexOf(".");
+			if(atpostion<1 || dotposition<atpostion+2 
+				|| dotposition+2>=MyEmail.length){
+				alert("please enter a valid address  \n atpostion:"+atpostion+"\n dotposition:"+dotposition);
+			return false;
+			}
+		}
+			function validateNumbers(){
+			var MyNumber = document.seondform.MyNumber.value;	
+			if(isNaN(MyNumber)){
+
+          document.getElementById("numLoc").innerHTML="enter only numbers";
+          return false;
+
+			}
+		}
+	</script>
+</head>
+<body>
+<form name="myform" onsubmit="return ValidateEmail();" method="post">
+	Email:<input type="text" name="MyEmail"><br><br>
+	<input type="submit" value="Register"><br><br>
+	
+</form>
+
+<form name="seondform" onsubmit="return validateNumbers();"><br><br>
+	Number:<input type="text" name="MyNumber"><br><br>
+	<span id="numLoc"></span>
+	<input type="submit" value="check">
+</form>
+
+</body>
+</html>
